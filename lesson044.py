@@ -45,3 +45,24 @@ def delete_note():
     else:
         print(f"Note '{note_title}' not found")
 
+
+def main():
+
+    while True:
+        display_menu()
+        choice = input("Enter your choice (1-4): ")
+        if choice == '1':
+            view_notes()
+        if choice == '2':
+            add_note()
+        if choice == '3':
+            delete_note()
+        if choice == '4':
+            print("Exiting the Note-taking App. GoodBye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 4.")
+
+
+if __name__ == "__main__":
+    main()
