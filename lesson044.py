@@ -34,3 +34,14 @@ def add_note():
     print(f"Note '{note_title}' added Successfully.")
 
 
+def delete_note():
+    note_title = input("Enter the title of the note to delete: ")
+    notes_dir = "notes"
+    note_path = os.path.join(notes_dir, f"{note_title}.txt")
+
+    if os.path.exists(note_path):
+        os.remove(note_path)
+        print(f"Note '{note_title}' deleted successfully.")
+    else:
+        print(f"Note '{note_title}' not found")
+
