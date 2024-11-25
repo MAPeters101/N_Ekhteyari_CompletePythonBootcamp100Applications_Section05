@@ -3,10 +3,10 @@ import os
 
 def display_menu():
     print("\nNote-taking App")
-    print("\n1. View Notes")
-    print("\n2. Add Note")
-    print("\n3. Delete Note")
-    print("\n4. Exit")
+    print("1. View Notes")
+    print("2. Add Note")
+    print("3. Delete Note")
+    print("4. Exit")
 
 def view_notes():
     print("\nExisting Notes: ")
@@ -17,7 +17,7 @@ def view_notes():
     for filename in os.listdir(notes_dir):
         with open(os.path.join(notes_dir, filename), 'r') as file:
             content = file.read()
-            print(f"{filename[:4]}:{content}")
+            print(f"{filename[:-4]}: {content}")
 
 
 def add_note():
@@ -53,11 +53,11 @@ def main():
         choice = input("Enter your choice (1-4): ")
         if choice == '1':
             view_notes()
-        if choice == '2':
+        elif choice == '2':
             add_note()
-        if choice == '3':
+        elif choice == '3':
             delete_note()
-        if choice == '4':
+        elif choice == '4':
             print("Exiting the Note-taking App. GoodBye!")
             break
         else:
