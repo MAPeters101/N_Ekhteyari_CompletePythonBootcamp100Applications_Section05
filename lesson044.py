@@ -8,6 +8,18 @@ def display_menu():
     print("\n3. Delete Note")
     print("\n4. Exit")
 
+def view_notes():
+    print("\nExisting Notes: ")
+    notes_dir = 'notes'
+    if not os.path.exists(notes_dir):
+        print("No notes available.")
+        return
+    for filename in os.listdir(notes_dir):
+        with open(os.path.join(notes_dir, filename), 'r') as file:
+            content = file.read()
+            print(f"{filename[:4]}:{content}")
+
+
 def add_note():
     note_title = input("Enter the note title: ")
     note_content = input("Enter the note content: ")
